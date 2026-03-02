@@ -28,4 +28,5 @@ public class Cliente {
         System.out.println("Numero: "+ numero);
         System.out.println("Residencia: "+ residencia);
     }
+
 }
