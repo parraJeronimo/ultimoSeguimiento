@@ -6,11 +6,11 @@ public class Cliente {
     private boolean libroPedido;
 
     public Cliente(String id,String nombre, String numero, String residencia,boolean libroPedido){
-        this.id=id;
-        this.nombre=nombre;
-        this.numero=numero;
-        this.residencia=residencia;
-        this.libroPedido=libroPedido;
+    this.id=id;
+    this.nombre=nombre;
+    this.numero=numero;
+    this.residencia=residencia;
+    this.libroPedido=libroPedido;
     }
     public String getId() {
         return id;
