@@ -11,6 +11,10 @@ public class Biblioteca {
         this.clientes = new ArrayList<>();
     }
 
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
     public void registrarCliente(Cliente cliente) {
         clientes.add(cliente);
     }

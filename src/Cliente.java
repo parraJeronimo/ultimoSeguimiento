@@ -3,14 +3,14 @@ public class Cliente {
     private String nombre;
     private String numero;
     private String residencia;
-    private int libroPedido;
+    private boolean libroPedido;
 
-    public Cliente(String id,String nombre, String numero, String residencia,int libroPedido){
-    this.id=id;
-    this.nombre=nombre;
-    this.numero=numero;
-    this.residencia=residencia;
-    this.libroPedido=libroPedido;
+    public Cliente(String id,String nombre, String numero, String residencia,boolean libroPedido){
+        this.id=id;
+        this.nombre=nombre;
+        this.numero=numero;
+        this.residencia=residencia;
+        this.libroPedido=libroPedido;
     }
     public String getId() {
         return id;
@@ -24,9 +24,14 @@ public class Cliente {
     public String getResidencia(){
         return residencia;
     }
-    public int getLibroPedido(){
+    public boolean getLibroPedido(){
         return libroPedido;
     }
+
+    public void setLibroPedido(boolean libroPedido) {
+        this.libroPedido = libroPedido;
+    }
+
     public void mostrarInfor(){
         System.out.println("ID: " + id);
         System.out.println("Nombre: "+ nombre);

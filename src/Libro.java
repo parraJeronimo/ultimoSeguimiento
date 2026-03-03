@@ -15,7 +15,8 @@ public class Libro {
         this.editorial = editorial;
         this.fechaPublicacion = fechaPublicacion;
         this.categoria = categoria;
-        this.estado = estado;
+        this.estado =  "Disponible";
+
     }
     public int getIdLibro() { return idLibro; }
     public String getTitulo() { return titulo; }
