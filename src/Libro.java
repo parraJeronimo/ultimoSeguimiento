@@ -30,5 +30,8 @@ public class Libro {
         this.estado = estado;
 
     }
-
+    @Override
+    public String toString() {
+        return idLibro + " - " + titulo + " - " + autor + " - " + estado;
+    }
 }
