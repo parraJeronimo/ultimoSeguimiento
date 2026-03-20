@@ -45,4 +45,28 @@ public class Inventario {
     public ArrayList<Libro> getLibros() {
         return libros;
     }
+
+    public void buscarLibros(String valor) {
+        boolean encontrado = false;
+        for (Libro libro : libros) {
+            if (libro.getTitulo().toLowerCase().contains(valor.toLowerCase()) ||
+                    libro.getAutor().toLowerCase().contains(valor.toLowerCase()) ||
+                    libro.getCategoria().toLowerCase().contains(valor.toLowerCase())) {
+                System.out.println(libro);
+                encontrado = true;
+            }
+        }
+        if (!encontrado) {
+            System.out.println("No existen libros.");
+        }
+    }
+
+    public void mostrarMasPrestados() {
+        libros.sort((a, b) -> b.getTotalPrestamo() - a.getTotalPrestamo());
+        int limite = Math.min(3, libros.size());
+        System.out.println("Libros más prestados:");
+        for (int i = 0; i < limite; i++) {
+            System.out.println(libros.get(i));
+        }
+    }
 }

@@ -1,13 +1,8 @@
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         Biblioteca biblioteca = new Biblioteca("LIBROS");
         Inventario inventario = new Inventario();
@@ -17,10 +12,12 @@ public class Main {
         do {
             System.out.println("\n===== MENU BIBLIOTECA =====");
             System.out.println("1. Registrar libro");
-            System.out.println("3. Listar libros disponibles");
-            System.out.println("4. Registrar cliente");
-            System.out.println("5. Generar prestamo");
-            System.out.println("6. Devolver libro");
+            System.out.println("2. Listar libros disponibles");
+            System.out.println("3. Registrar cliente");
+            System.out.println("4. Generar prestamo");
+            System.out.println("5. Devolver libro");
+            System.out.println("6. Buscar libros");
+            System.out.println("7. Libros mas prestados");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opcion: ");
 
@@ -53,12 +50,11 @@ public class Main {
                     System.out.println("Libro agregado correctamente.");
                     break;
 
-
-                case 3:
+                case 2:
                     inventario.listarDisponibles();
                     break;
 
-                case 4:
+                case 3:
                     System.out.print("ID Cliente: ");
                     String id = sc.nextLine();
 
@@ -76,15 +72,13 @@ public class Main {
                     System.out.println("Cliente registrado.");
                     break;
 
-                case 5:
+                case 4:
                     System.out.print("ID Libro: ");
                     int idLibro = sc.nextInt();
                     sc.nextLine();
 
                     System.out.print("ID Cliente: ");
                     String idCliente = sc.nextLine();
-
-                    // Debes pasar los clientes al arreglo antes
                     prestamos.configurarPrestamo(
                             biblioteca.getClientes().toArray(new Cliente[0]),
                             inventario
@@ -93,7 +87,7 @@ public class Main {
                     prestamos.generarPrestamo(idLibro, idCliente);
                     break;
 
-                case 6:
+                case 5:
                     System.out.print("ID Libro: ");
                     int idDev = sc.nextInt();
                     sc.nextLine();
@@ -102,6 +96,16 @@ public class Main {
                     String idCliDev = sc.nextLine();
 
                     prestamos.devolverLibro(idDev, idCliDev);
+                    break;
+
+                case 6:
+                    System.out.print("Realizar busqueda: ");
+                    String valor = sc.nextLine();
+                    inventario.buscarLibros(valor);
+                    break;
+
+                case 7:
+                    inventario.mostrarMasPrestados();
                     break;
 
                 case 0:
