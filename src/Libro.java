@@ -7,6 +7,7 @@ public class Libro {
     private String fechaPublicacion;
     private String categoria;
     private String estado;
+    private int totalPrestamo;
 
     public Libro(int idLibro, String titulo, String autor, String editorial, String fechaPublicacion, String categoria) {
         this.idLibro = idLibro;
@@ -15,21 +16,50 @@ public class Libro {
         this.editorial = editorial;
         this.fechaPublicacion = fechaPublicacion;
         this.categoria = categoria;
-        this.estado =  "Disponible";
+        this.estado = "Disponible";
 
     }
-    public int getIdLibro() { return idLibro; }
-    public String getTitulo() { return titulo; }
-    public String getAutor() { return autor; }
-    public String getEditorial() { return editorial; }
-    public String getfechaPublicacion() { return fechaPublicacion; }
-    public String getCategoria() { return categoria; }
-    public String getEstado() { return estado; }
+
+    public int getTotalPrestamo() {
+        return totalPrestamo;
+    }
+
+    public void setTotalPrestamo(int totalPrestamo) {
+        this.totalPrestamo = totalPrestamo;
+    }
+
+    public int getIdLibro() {
+        return idLibro;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public String getEditorial() {
+        return editorial;
+    }
+
+    public String getFechaPublicacion() {
+        return fechaPublicacion;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
 
     public void setEstado(String estado) {
         this.estado = estado;
-
     }
+
     @Override
     public String toString() {
         return idLibro + " - " + titulo + " - " + autor + " - " + estado;
