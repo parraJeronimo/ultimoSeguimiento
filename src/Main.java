@@ -8,6 +8,10 @@ public class Main {
         Inventario inventario = new Inventario();
         Prestamos prestamos = new Prestamos();
 
+        inventario.getLibros().addAll(Persistencias.cargarLibros());
+        biblioteca.getClientes().addAll(Persistencias.cargarClientes());
+
+
         int opcion;
         do {
             System.out.println("\n===== MENU BIBLIOTECA =====");
@@ -18,6 +22,7 @@ public class Main {
             System.out.println("5. Devolver libro");
             System.out.println("6. Buscar libros");
             System.out.println("7. Libros mas prestados");
+            System.out.println("8. Visualizar Multa ");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opcion: ");
 
@@ -108,7 +113,23 @@ public class Main {
                     inventario.mostrarMasPrestados();
                     break;
 
+                case 8:
+                    System.out.print("ID Cliente: ");
+                    String idMulta = sc.nextLine();
+
+                    Cliente c = biblioteca.buscarCliente(idMulta);
+
+                    if (c != null) {
+                        System.out.println("Multa acumulada: $" + c.getMulta());
+                    } else {
+                        System.out.println("Cliente no encontrado");
+                    }
+                    break;
+
                 case 0:
+                    Persistencias.guardarLibros(inventario.getLibros());
+                    Persistencias.guardarClientes(biblioteca.getClientes());
+                    Persistencias.guardarPrestamos(prestamos.getPrestamosLista());
                     System.out.println("FIN");
                     break;
 

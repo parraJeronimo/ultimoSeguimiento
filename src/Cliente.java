@@ -4,6 +4,7 @@ public class Cliente {
     private String numero;
     private String residencia;
     private boolean libroPedido;
+    private double multa;
 
     public Cliente(String id,String nombre, String numero, String residencia,boolean libroPedido){
     this.id=id;
@@ -11,6 +12,7 @@ public class Cliente {
     this.numero=numero;
     this.residencia=residencia;
     this.libroPedido=libroPedido;
+    this.multa=0;
     }
     public String getId() {
         return id;
@@ -38,5 +40,11 @@ public class Cliente {
         System.out.println("Numero: "+ numero);
         System.out.println("Residencia: "+ residencia);
     }
+    public double getMulta(){
+        return multa;
+    }
 
+    public void agregarMulta(double valor) {
+        multa+= valor;
+    }
 }

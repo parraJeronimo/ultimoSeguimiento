@@ -1,0 +1,5 @@
+0,Percy Jackson y el ladron del rayo,Rick Riordan,Fantasia,Disponible,0
+1,Percy Jackson y el mar de monstruos,Rick Riordan,Fantasia,Disponible,0
+2,Percy Jackson y la maldicion del titan,Rick Riordan,Fantasia,Disponible,0
+3,Percy Jackson y la batalla del laberinto,Rick Riordan,Fantasia,Disponible,0
+4,Percy Jackson y el ultimo heroe del olimpo,Rick Riordan,Fantasia,Disponible,0
